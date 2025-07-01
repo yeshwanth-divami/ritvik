@@ -1,27 +1,31 @@
-# Product Requirements Document
+# Project Brief
 
-## 1. Introduction
+Initiation of “RITVIK” — Conversational Task Management Bot for Google Workspace
 
-This document outlines the business and product requirements for the project. It serves as a guide for the development team to understand the goals and constraints of the product.
+The Diwami engineering team convened to formally initiate the planning for RITVIK, an internal chatbot designed to manage task workflows directly within Google Chat. The discussion outlined foundational principles, expected user behaviors, interface modalities, and technical considerations for version one of the project.
 
-## 2. Target Audience
+The core idea centers around creating a lightweight task management system accessible via chat commands or forms inside Google Chat, abstracting the friction associated with traditional task tools. RITVIK will serve as a conversational interface for task assignment, tracking, updates, and metrics—designed for minimal UI friction and rapid interaction.
 
-The primary audience for this product is [Describe the target users, their needs, and goals].
+Visit [Functional Overview](../functional/overview.md) for detailed specifications and planned system behavior.
 
-## 3. Features
+## Scope of First Sprint
+- Define behavior for `/task` and `/update` including form logic.
+- Implement a basic backend with API exposure to read/write from PostgreSQL.
+- Google Chat app integration including dialog handling via AppScript or Cloud Functions.
+- Host backend in Diwami-controlled infra (non-SaaS).
+- Allow for internal user identification via Google Workspace email.
 
-### 3.1. Core Features
+## Phase 2 Aspirations
+- LLM-powered task parsing from natural conversations.
+- Natural Language Parsing (v2): Planned LLM integration for free-form task creation.
+- Email or calendar-linked reminders and deadlines.
+- Automatic task summarization and progress reporting.
 
-*   **Feature A:** [Description of Feature A]
-*   **Feature B:** [Description of Feature B]
-*   **Feature C:** [Description of Feature C]
+## Suggested Stack (Under Evaluation)
+- **Frontend (UI):** Optional web portal for task visualization.
+- **Backend:** FastAPI API layer.
+- **Database:** PostgreSQL with SQLModel as ORM.
+- **Chat Integration:** Google Chat App with AppScript or Webhook-based handler.
+- **Optional LLM Use:** Prompt parsing for free-form text conversion to task schema using Pydantic-AI.
 
-### 3.2. Future Enhancements
-
-*   [Description of a potential future feature]
-
-## 4. Non-Functional Requirements
-
-*   **Performance:** The system should be able to handle [X] concurrent users with a response time of less than [Y] seconds.
-*   **Security:** All user data must be encrypted at rest and in transit.
-*   **Scalability:** The architecture should be able to scale to support future growth.
+The project intends to minimize meetings by shifting updates into asynchronous task flows, enabling visibility and accountability through structured chat interactions. RITVIK is positioned as a long-term internal tool that evolves into a fully LLM-aware assistant within Diwami’s productivity suite.
